@@ -55,11 +55,10 @@ func (w *Wormhole) filterIgnoreSubscribeList() ([]*SubscribeRuleGroup, []*Subscr
 	var httpSubscribe []*SubscribeRuleGroup
 	var fileSubscribe []*SubscribeRuleGroup
 	for i := range w.IgnoreRuleList {
-
-		if w.RuleList[i].subscribe.isOnlineSubscribe {
-			httpSubscribe = append(httpSubscribe, &w.RuleList[i])
+		if w.IgnoreRuleList[i].subscribe.isOnlineSubscribe {
+			httpSubscribe = append(httpSubscribe, &w.IgnoreRuleList[i])
 		} else {
-			fileSubscribe = append(fileSubscribe, &w.RuleList[i])
+			fileSubscribe = append(fileSubscribe, &w.IgnoreRuleList[i])
 		}
 	}
 

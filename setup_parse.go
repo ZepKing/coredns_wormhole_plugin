@@ -56,21 +56,21 @@ func parsePluginConfiguration(c *caddy.Controller) (*WormholeConfig, error) {
 		case Config_Key_Domain:
 
 			domainList := c.RemainingArgs()
-			config.DomainList = domainList
+			config.DomainList = append(config.DomainList, domainList...)
 
 		case Config_Key_DomainSuffix:
 
 			domainSuffixList := c.RemainingArgs()
-			config.DomainSuffixList = domainSuffixList
+			config.DomainSuffixList = append(config.DomainSuffixList, domainSuffixList...)
 
 		case Config_Key_DomainKeyword:
 
 			domainKeywordList := c.RemainingArgs()
-			config.DomainKeywordList = domainKeywordList
+			config.DomainKeywordList = append(config.DomainKeywordList, domainKeywordList...)
 		case Config_Key_RegexlistRules:
 
 			regexlistRulesList := c.RemainingArgs()
-			config.RegexlistRules = regexlistRulesList
+			config.RegexlistRules = append(config.RegexlistRules, regexlistRulesList...)
 
 		case Config_Key_IgnoreList:
 			listArgs := c.RemainingArgs()
@@ -109,21 +109,21 @@ func parsePluginConfiguration(c *caddy.Controller) (*WormholeConfig, error) {
 		case Config_Key_IgnoreDomain:
 
 			domainList := c.RemainingArgs()
-			config.IgnoreDomainList = domainList
+			config.IgnoreDomainList = append(config.IgnoreDomainList, domainList...)
 
 		case Config_Key_IgnoreDomainSuffix:
 
 			domainSuffixList := c.RemainingArgs()
-			config.IgnoreDomainSuffixList = domainSuffixList
+			config.IgnoreDomainSuffixList = append(config.IgnoreDomainSuffixList, domainSuffixList...)
 
 		case Config_Key_IgnoreDomainKeyword:
 
 			domainKeywordList := c.RemainingArgs()
-			config.IgnoreDomainKeywordList = domainKeywordList
+			config.IgnoreDomainKeywordList = append(config.IgnoreDomainKeywordList, domainKeywordList...)
 		case Config_Key_IgnoreRegexlistRules:
 
 			regexlistRulesList := c.RemainingArgs()
-			config.IgnoreRegexlistRules = regexlistRulesList
+			config.IgnoreRegexlistRules = append(config.IgnoreRegexlistRules, regexlistRulesList...)
 
 		case Config_Key_HttpRenewalInterval:
 

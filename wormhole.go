@@ -262,7 +262,6 @@ func (wh *Wormhole) runHttpUpdater() {
 
 func (wh *Wormhole) handleHTTPListUpdate() {
 	log.Infof("Updating and Persisting HTTP lists...")
-	wh.getFilterHttpSubscribeList()
 	httpSubscribeGroup, httpIgnoreSubscribeGroup := wh.getFilterHttpSubscribeList()
 	updateHttpSubscribeList(httpSubscribeGroup)
 	updateHttpSubscribeList(httpIgnoreSubscribeGroup)
